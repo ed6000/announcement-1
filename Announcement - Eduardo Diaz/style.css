@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+	font-family: 'Raleway';
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style-type: circle;
+	padding-left: 20px; /*keep list style type within div*/
+}
+#menu {
+	display: flex;
+	animation: menuAnimation 2s ease-in;
+	background-color: #80000080;
+	border-bottom: solid;
+	border-color: black;
+	justify-content: space-between;
+}
+.menuitem {
+	flex: 1 0 auto;
+	font-size: 30px;
+	text-align: center;
+}
+a:link {
+	color: white;
+	text-decoration: none;
+}
+.menuitem:hover {
+	background-color: red;
+	color: black;
+}
+
+a:visited {
+	color: rgba(226, 163, 164, 1.00);
+}
+@keyframes menuAnimation {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+body {
+	background: url(background.jpg);
+}
+h1 {
+	font-family: Georgia;
+}
+h2 {
+	font-family: Georgia;
+}
+.box { /* gray box for text */
+	background-color: rgba(0, 0, 0, 0.58);
+	font-size: 20px;
+	color: white;
+	margin: 200px;
+	padding: 10px;
+	position: absolute;
+	border-style: dotted;
+	border-color: orange;
+}
+.modalDialog {
+	position: fixed;
+	font-family: Raleway, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(255, 193, 7, 0.47);
+	z-index: 99999;
+	opacity: 0; /*hide div until clicked*/
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalDialog:target {
+	opacity: 1; /*make div visible*/
+	pointer-events: auto;
+}
+.modalDialog>div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	border-style: dashed;
+	background: #fff;
+	background: -moz-radial-gradient(orange, yellow); /*radial for firefox*/
+	background: -webkit-radial-gradient(orange, yellow); /*radial for chrome*/
+}
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+.close:hover {
+	background: #FF9A00;
+	color: white;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+td, ul>li{
+	padding: 4px;
+}
